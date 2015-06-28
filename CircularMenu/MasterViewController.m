@@ -49,8 +49,7 @@
     //2. change text in action button
     //3. store store_name value
     
-    
-    NSLog(@"选中第%d",index);
+    NSLog(@"index: %d",index);
 }
 
 @end
