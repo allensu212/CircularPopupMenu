@@ -52,7 +52,7 @@
         self.containerView = controller.view;
         [self.containerView addSubview:self];
         once = NO;
-        [self addSomeViews];
+        [self addViews];
         
     }
     
@@ -66,7 +66,7 @@
     once = NO;
 }
 
--(void)addSomeViews{
+-(void)addViews{
     
     self.mainView = [[UIView alloc]initWithFrame:menuFrame];
     self.mainView.backgroundColor = menuColor;
@@ -86,14 +86,16 @@
 
 }
 
--(void)setUpSomeDatas{
+-(void)setUpData{
 
     
     //-----------计算目标点的位置----------
     R = self.mainView.bounds.size.width / 2;
     r = self.radius;
+    
     //子视图离开主视图的距离 [distance]
     distance = R + r + self.extraDistance;
+    
     //平分之后的角度,弧度制，因为sinf、cosf需要弧度制
     CGFloat degree = (180/(menuCount+1))*(M_PI/180);
     
@@ -108,27 +110,36 @@
         NSLog(@"centers:%@",NSStringFromCGPoint(center));
         [PointsDic setObject:[NSValue valueWithCGPoint:center] forKey:[NSString stringWithFormat:@"center%d",i+1]];
         
-        //创建每个menu
-        UIView *item = [[UIView alloc]initWithFrame:CGRectZero];
-        item.backgroundColor = menuColor;
-        item.tag = i+1;
-        item.center = self.mainView.center;
-        item.bounds = CGRectMake(0, 0, r *2, r*2);
-        item.layer.cornerRadius = item.bounds.size.width / 2;
-        item.layer.masksToBounds = YES;
+        //storeButton
+        UIView *storeButton = [[UIView alloc]initWithFrame:CGRectZero];
+        storeButton.backgroundColor = menuColor;
+        storeButton.tag = i+1;
+        storeButton.center = self.mainView.center;
+        storeButton.bounds = CGRectMake(0, 0, r*2, r*2);
+        storeButton.layer.cornerRadius = storeButton.bounds.size.width / 2;
+        storeButton.layer.masksToBounds = YES;
         
         //设置每个item的图片
-        CGFloat imageWidth = (item.frame.size.width / 2) *sin(M_PI_4) * 2;
+        //setup textViews
+        
+        CGFloat imageWidth = (storeButton.frame.size.width / 2) *sin(M_PI_4) * 2;
         UIImageView *menuImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, imageWidth, imageWidth)];
-        menuImage.center = CGPointMake(item.frame.size.width/2, item.frame.size.height/2);
-        menuImage.image = self.menuImagesArray[i];
-        [item addSubview:menuImage];
+        menuImage.center = CGPointMake(storeButton.frame.size.width/2, storeButton.frame.size.height/2);
+        
+        
+        //add textViews
+        
+        UITextView *storeNameTextView = self.storeNameTextViewsArray[i];
+        [storeButton addSubview:storeNameTextView];
+        
+        //menuImage.image = self.storeNameTextViewsArray[i];
+        //[storeButton addSubview:menuImage];
         
         UITapGestureRecognizer *menuTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(menuTap:)];
-        [item addGestureRecognizer:menuTap];
+        [storeButton addGestureRecognizer:menuTap];
         
-        [self.containerView insertSubview:item belowSubview:self.mainView];
-        [Menus addObject:item];
+        [self.containerView insertSubview:storeButton belowSubview:self.mainView];
+        [Menus addObject:storeButton];
         
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
         shapeLayer.fillColor = menuColor.CGColor;
@@ -227,8 +238,8 @@
 -(void)tapToSwitchOpenOrClose{
     
     if (!once) {
-        [self setUpSomeDatas];
-        NSAssert(self.menuImagesArray.count == menuCount, @"Images' count is not equal with menus' count");
+        [self setUpData];
+        NSAssert(self.storeNameTextViewsArray.count == menuCount, @"Images' count is not equal with menus' count");
         once = YES;
     }
     

@@ -36,7 +36,7 @@
 
 
 //添加菜单图标
-@property(nonatomic,strong)NSMutableArray *menuImagesArray;
+@property(nonatomic,strong)NSMutableArray *storeNameTextViewsArray;
 
 
 -(id)initWithOrigin:(CGPoint)origin andDiameter:(CGFloat)diameter andDelegate:(UIViewController *)controller themeColor:(UIColor *)themeColor;

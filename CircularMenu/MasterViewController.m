@@ -24,7 +24,7 @@
 
 -(void)gooeyMenuSetup{
     
-    gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:CGPointMake(CGRectGetMidX(self.view.frame)-50, 500) andDiameter:80.0f andDelegate:self themeColor:[UIColor blackColor]];
+    gooeyMenu = [[KYGooeyMenu alloc]initWithOrigin:CGPointMake(CGRectGetMidX(self.view.frame)-50, 500) andDiameter:80.0f andDelegate:self themeColor:[UIColor purpleColor]];
     
     gooeyMenu.menuDelegate = self;
     
@@ -36,9 +36,15 @@
     gooeyMenu.extraDistance = 70;
     
     //adding textViews instead of images
-    gooeyMenu.menuImagesArray = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"tabbarItem_discover highlighted"],[UIImage imageNamed:@"tabbarItem_group highlighted"],[UIImage imageNamed:@"tabbarItem_home highlighted"],[UIImage imageNamed:@"tabbarItem_message highlighted"],[UIImage imageNamed:@"tabbarItem_user_man_highlighted"], nil];
     
-    gooeyMenu.MenuCount = (int)gooeyMenu.menuImagesArray.count;
+    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(10, 10, gooeyMenu.frame.size.width / 2, gooeyMenu.frame.size.width / 2)];
+    textView.text = @"test";
+    textView.backgroundColor = [UIColor clearColor];
+    textView.textColor = [UIColor whiteColor];
+    
+    gooeyMenu.storeNameTextViewsArray = [NSMutableArray arrayWithObjects:textView, nil];
+    
+    gooeyMenu.MenuCount = (int)gooeyMenu.storeNameTextViewsArray.count;
 }
 
 #pragma mark - menuDidSelectedDelegate
