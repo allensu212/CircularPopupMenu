@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		BE79E72B1B4047BA0056101C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE79E72A1B4047BA0056101C /* main.m */; };
 		BE79E72E1B4047BA0056101C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE79E72D1B4047BA0056101C /* AppDelegate.m */; };
-		BE79E7311B4047BA0056101C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE79E7301B4047BA0056101C /* ViewController.m */; };
+		BE79E7311B4047BA0056101C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE79E7301B4047BA0056101C /* MasterViewController.m */; };
 		BE79E7341B4047BA0056101C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE79E7321B4047BA0056101C /* Main.storyboard */; };
 		BE79E7361B4047BA0056101C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE79E7351B4047BA0056101C /* Images.xcassets */; };
 		BE79E7391B4047BA0056101C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE79E7371B4047BA0056101C /* LaunchScreen.xib */; };
 		BE79E7451B4047BA0056101C /* CircularMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE79E7441B4047BA0056101C /* CircularMenuTests.m */; };
+		BE79E7521B4047D70056101C /* Cross.m in Sources */ = {isa = PBXBuildFile; fileRef = BE79E74E1B4047D70056101C /* Cross.m */; };
+		BE79E7531B4047D70056101C /* KYGooeyMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE79E74F1B4047D70056101C /* KYGooeyMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		BE79E72A1B4047BA0056101C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE79E72C1B4047BA0056101C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE79E72D1B4047BA0056101C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BE79E72F1B4047BA0056101C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BE79E7301B4047BA0056101C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BE79E72F1B4047BA0056101C /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		BE79E7301B4047BA0056101C /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		BE79E7331B4047BA0056101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE79E7351B4047BA0056101C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE79E7381B4047BA0056101C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BE79E73E1B4047BA0056101C /* CircularMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircularMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE79E7431B4047BA0056101C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE79E7441B4047BA0056101C /* CircularMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircularMenuTests.m; sourceTree = "<group>"; };
+		BE79E74E1B4047D70056101C /* Cross.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cross.m; sourceTree = "<group>"; };
+		BE79E74F1B4047D70056101C /* KYGooeyMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYGooeyMenu.m; sourceTree = "<group>"; };
+		BE79E7501B4047D70056101C /* Cross.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cross.h; sourceTree = "<group>"; };
+		BE79E7511B4047D70056101C /* KYGooeyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYGooeyMenu.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +87,11 @@
 		BE79E7271B4047BA0056101C /* CircularMenu */ = {
 			isa = PBXGroup;
 			children = (
+				BE79E7541B4047E40056101C /* API */,
 				BE79E72C1B4047BA0056101C /* AppDelegate.h */,
 				BE79E72D1B4047BA0056101C /* AppDelegate.m */,
-				BE79E72F1B4047BA0056101C /* ViewController.h */,
-				BE79E7301B4047BA0056101C /* ViewController.m */,
+				BE79E72F1B4047BA0056101C /* MasterViewController.h */,
+				BE79E7301B4047BA0056101C /* MasterViewController.m */,
 				BE79E7321B4047BA0056101C /* Main.storyboard */,
 				BE79E7351B4047BA0056101C /* Images.xcassets */,
 				BE79E7371B4047BA0056101C /* LaunchScreen.xib */,
@@ -117,6 +124,17 @@
 				BE79E7431B4047BA0056101C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE79E7541B4047E40056101C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BE79E7501B4047D70056101C /* Cross.h */,
+				BE79E74E1B4047D70056101C /* Cross.m */,
+				BE79E7511B4047D70056101C /* KYGooeyMenu.h */,
+				BE79E74F1B4047D70056101C /* KYGooeyMenu.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +237,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE79E7311B4047BA0056101C /* ViewController.m in Sources */,
+				BE79E7521B4047D70056101C /* Cross.m in Sources */,
+				BE79E7311B4047BA0056101C /* MasterViewController.m in Sources */,
+				BE79E7531B4047D70056101C /* KYGooeyMenu.m in Sources */,
 				BE79E72E1B4047BA0056101C /* AppDelegate.m in Sources */,
 				BE79E72B1B4047BA0056101C /* main.m in Sources */,
 			);
