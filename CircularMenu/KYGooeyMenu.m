@@ -75,11 +75,18 @@
     [self.containerView addSubview:self.mainView];
     
     //初始化加号
-    cross = [[Cross alloc]init];
-    cross.center = CGPointMake(self.mainView.bounds.size.width/2, self.mainView.bounds.size.height/2);
-    cross.bounds = CGRectMake(0, 0, menuFrame.size.width/2, menuFrame.size.width/2);
-    cross.backgroundColor = [UIColor clearColor];
-    [self.mainView addSubview:cross];
+    
+    //Select Store
+    
+    UITextView *storeSelectTextView = [[UITextView alloc]initWithFrame:CGRectMake(0, 10, menuFrame.size.width, menuFrame.size.width)];
+    storeSelectTextView.text = @"Select Store";
+    storeSelectTextView.userInteractionEnabled = NO;
+    storeSelectTextView.textAlignment = NSTextAlignmentCenter;
+    storeSelectTextView.textColor = [UIColor whiteColor];
+    storeSelectTextView.font = [UIFont fontWithName:@"Futura" size:14.0f];
+    storeSelectTextView.backgroundColor = [UIColor clearColor];
+    
+    [self.mainView addSubview:storeSelectTextView];
     
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapToSwitchOpenOrClose)];
     [self.mainView addGestureRecognizer:tapGes];
@@ -229,7 +236,8 @@
         }
     }
     
-    //[self tapToSwitchOpenOrClose];
+    //close sub-buttons when clicked
+    [self tapToSwitchOpenOrClose];
 }
 
 

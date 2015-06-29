@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SubButtonsClickedCompletionBlock)(void);
 
 @protocol menuDidSelectedDelegate <NSObject>
 

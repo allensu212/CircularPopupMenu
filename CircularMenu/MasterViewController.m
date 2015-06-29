@@ -37,13 +37,23 @@
     
     //adding textViews instead of images
     
-    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(10, 10, gooeyMenu.frame.size.width / 2, gooeyMenu.frame.size.width / 2)];
-    textView.text = @"test";
-    textView.backgroundColor = [UIColor clearColor];
-    textView.textColor = [UIColor whiteColor];
+    gooeyMenu.storeNameTextViewsArray = [NSMutableArray new];
     
-    gooeyMenu.storeNameTextViewsArray = [NSMutableArray arrayWithObjects:textView, nil];
-    
+    for (int index = 1; index < 7; index ++) {
+        
+        UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(10, 10, gooeyMenu.frame.size.width / 2, gooeyMenu.frame.size.width / 2)];
+        
+        textView.text = [NSString stringWithFormat:@"%d", index];
+        textView.font = [UIFont fontWithName:@"Futura" size:14.0f];
+        textView.textAlignment = NSTextAlignmentLeft;
+        textView.backgroundColor = [UIColor clearColor];
+        textView.textColor = [UIColor whiteColor];
+        textView.userInteractionEnabled = NO;
+        
+        [gooeyMenu.storeNameTextViewsArray addObject:textView];
+        
+    }
+
     gooeyMenu.MenuCount = (int)gooeyMenu.storeNameTextViewsArray.count;
 }
 
